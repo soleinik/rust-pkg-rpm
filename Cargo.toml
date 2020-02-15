@@ -23,9 +23,8 @@ rust-rpm-daemon = { path = "/usr/local/bin/rust-rpm-daemon" }
 
 [package.metadata.rpm.files]
 "rust-rpm-daemon.service" = { path = "/usr/lib/systemd/system/rust-rpm-daemon.service" }
-
 "rust-rpm-daemon.conf" = { path = "/usr/local/etc/rust-rpm-daemon/rust-rpm-daemon.conf" }
 
 "COPYRIGHT" = { path = "/usr/share/doc/rust-rpm-daemon/COPYRIGHT" }
 "LICENSE" = { path = "/usr/share/doc/rust-rpm-daemon/LICENSE" }
-"rust-pkg-rpm.info" = { path = "/usr/share/info/rust-pkg-rpm.info" }
+"rust-rpm-daemon.info" = { path = "/usr/share/info/rust-rpm-daemon.info" }
