@@ -48,8 +48,8 @@ exit 0
 
 %files
 %defattr(-,root,root,-)
-%{_bindir}/*
-%config(noreplace) %{_datadir}%{_sysconfdir}/%{name}/%{name}.conf
+%{_exec_prefix}/local/bin/*
+%config(noreplace) %{_exec_prefix}/local%{_sysconfdir}/%{name}/%{name}.conf
 %doc %{_docdir}/%{name}/COPYRIGHT
 %license %{_docdir}/%{name}/LICENSE
 %{_infodir}/rust-pkg-rpm.info.gz
