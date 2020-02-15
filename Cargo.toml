@@ -3,7 +3,23 @@ name = "rust-rpm-daemon"
 version = "0.1.0"
 authors = ["soleinik <162591+soleinik@users.noreply.github.com>"]
 edition = "2018"
+description = "Rust daemon, RPM packaged"
+
+categories = ["system"]
+license = "MIT/Apache-2.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+[package.metadata.rpm.cargo]
+buildflags = ["--release"]
+
+[package.metadata.rpm.targets]
+rust-rpm-daemon = { path = "/usr/bin/rust-rpm-daemon" }
+
+[package.metadata.rpm.files]
+"rust-rpm-daemon.conf" = { path = "/usr/share/etc/rust-rpm-daemon/rust-rpm-daemon.conf" }
+"COPYRIGHT" = { path = "/usr/share/doc/rust-rpm-daemon/COPYRIGHT" }
+"LICENSE" = { path = "/usr/share/doc/rust-rpm-daemon/LICENSE" }
+"rust-pkg-rpm.info" = { path = "/usr/share/info/rust-pkg-rpm.info" }
