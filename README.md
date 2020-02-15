@@ -39,5 +39,6 @@ Finished rust-rpm-daemon configured (type "cargo rpm build" to build)
 
 
 ## to build
-cargo rpm build
-
+```
+$ cargo rpm build
+```
