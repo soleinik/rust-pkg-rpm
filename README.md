@@ -39,7 +39,8 @@ $ cargo rpm build
     Finished release [optimized] target(s) in 0.20s
     Building rust-rpm-daemon-0.1.0-1.rpm (using rpmbuild 4.14.1)
     Finished rust-rpm-daemon-0.1.0-1.rpm: built in 0 secs
-soleinik@dais:~/work/rust/rust-pkg-rpm$ tree target/release/rpmbuild/
+
+$ tree target/release/rpmbuild/
 target/release/rpmbuild/
 ├── BUILD
 │   └── rust-rpm-daemon-0.1.0
