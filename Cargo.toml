@@ -1,9 +1,9 @@
 [package]
-name = "rust-rpm-daemon"
+name = "rust-rpm-app"
 version = "0.1.0"
 authors = ["soleinik <162591+soleinik@users.noreply.github.com>"]
 edition = "2018"
-description = "Rust daemon, RPM packaged"
+description = "Rust app, RPM packaged"
 
 categories = ["system"]
 license = "MIT/Apache-2.0"
@@ -16,10 +16,10 @@ license = "MIT/Apache-2.0"
 buildflags = ["--release"]
 
 [package.metadata.rpm.targets]
-rust-rpm-daemon = { path = "/usr/local/bin/rust-rpm-daemon" }
+rust-rpm-app = { path = "/usr/local/bin/rust-rpm-app" }
 
 [package.metadata.rpm.files]
-"rust-rpm-daemon.conf" = { path = "/usr/local/etc/rust-rpm-daemon/rust-rpm-daemon.conf" }
-"COPYRIGHT" = { path = "/usr/share/doc/rust-rpm-daemon/COPYRIGHT" }
-"LICENSE" = { path = "/usr/share/doc/rust-rpm-daemon/LICENSE" }
-"rust-rpm-daemon.info" = { path = "/usr/share/info/rust-rpm-daemon.info" }
+"rust-rpm-app.conf" = { path = "/usr/local/etc/rust-rpm-app/rust-rpm-app.conf" }
+"COPYRIGHT" = { path = "/usr/share/doc/rust-rpm-app/COPYRIGHT" }
+"LICENSE" = { path = "/usr/share/doc/rust-rpm-app/LICENSE" }
+"rust-rpm-app.info" = { path = "/usr/share/info/rust-rpm-app.info" }

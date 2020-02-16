@@ -2,12 +2,12 @@
 %define __os_install_post %{_dbpath}/brp-compress
 %define debug_package %{nil}
 
-Name: rust-rpm-daemon
-Summary: Rust daemon, RPM packaged
+Name: rust-rpm-app
+Summary: Rust app, RPM packaged
 Version: @@VERSION@@
 Release: @@RELEASE@@
 License: MIT or ASL 2.0
-Group: System Environment/Daemons
+Group: Applications/System
 Source0: %{name}-%{version}.tar.gz
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
@@ -26,7 +26,6 @@ gzip -9 %{buildroot}%{_infodir}/%{name}.info
 
 %clean
 #rm -rf %{buildroot}
-
 
 
 %pre
