@@ -1,4 +1,4 @@
-# rust-pkg-rpm primer
+# rust-rpm-app primer
 
 ## host info
 ```
