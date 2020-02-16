@@ -2,7 +2,6 @@
 %define __os_install_post %{_dbpath}/brp-compress
 %define debug_package %{nil}
 %define _unitdir /usr/lib/systemd/system
-
  
 
 Name: rust-rpm-daemon
@@ -16,9 +15,9 @@ Source0: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 #BuildRequires: systemd
 
-Requires(post): systemd
-Requires(preun): systemd
-Requires(postun): systemd
+#Requires(post): systemd
+#Requires(preun): systemd
+#Requires(postun): systemd
 
 %description
 %{summary}
@@ -35,13 +34,30 @@ gzip -9 %{buildroot}%{_infodir}/%{name}.info
 %clean
 rm -rf %{buildroot}
 
-%systemd_post rust-rpm-daemon.service
+
+#https://www.golinuxhub.com/2018/05/how-to-execute-script-at-pre-post-preun-postun-spec-file-rpm.html
+
+
+%pre
+echo "==> pre: $1 <=="
+
+%post
+echo "==> post: $1 <=="
+systemctl enable %{name}.service
+systemctl restart %{name}.service
+echo "enabled/(re)started"
 
 %preun
-%systemd_preun rust-rpm-daemon.service
+echo "==> preun: $1 <=="
+if [ $1 == 0 ] ; then #removed
+  systemctl disable %{name}.service
+  systemctl stop %{name}.service
+  echo "disabled/stoped"
+fi
 
 %postun
-%systemd_postun_with_restart rust-rpm-daemon.service
+echo "==> postun: $1 <=="
+
 
 %files
 %defattr(-,root,root,-)

@@ -2,11 +2,28 @@
 [Unit]
 Description= Rust Test Service
 AssertPathExists=/usr/local/bin/rust-rpm-daemon
+Requires=network.target
+
 
 [Service]
-Type=notify
-ExecStart=/usr/local/bin/rust-rpm-daemon %i.conf
+User=nobody
+Group=nogroup
+
+Type=simple
+
+ExecStart=/usr/local/bin/rust-rpm-daemon
 Nice=5
+
+#PIDFile=/var/run/nemesis.pid
+
+StandardOutput=journal
+StandardError=journal
+
+Restart=always
+RestartSec=30
+Restart=on-failure
+
+
 
 [Install]
 WantedBy=multi-user.target
