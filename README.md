@@ -23,7 +23,7 @@ $ cargo install cargo-rpm
 $sudo apt install rpm
 ```
 
-## this is run once (to init)
+## this is run once (this repo already initialized)
 
 ```
 cargo rpm init \
