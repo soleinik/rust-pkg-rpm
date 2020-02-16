@@ -22,7 +22,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 rm -rf %{buildroot}
 mkdir -p %{buildroot}
 cp -a * %{buildroot}
-gzip -9 %{buildroot}%{_infodir}/rust-pkg-rpm.info
+gzip -9 %{buildroot}%{_infodir}/%{name}.info
 
 %clean
 #rm -rf %{buildroot}
@@ -52,4 +52,4 @@ exit 0
 %config(noreplace) %{_exec_prefix}/local%{_sysconfdir}/%{name}/%{name}.conf
 %doc %{_docdir}/%{name}/COPYRIGHT
 %license %{_docdir}/%{name}/LICENSE
-%{_infodir}/rust-pkg-rpm.info.gz
+%{_infodir}/%{name}.info.gz
